@@ -10,7 +10,7 @@ jobs:
       with:
         ref: ${{ github.event.pull_request.head.sha }}
     - name: Run PHPCS inspection
-      uses: shivammathur/setup-php@v2
+      uses: rtCamp/action-phpcs-code-review@v3
       env:
         GH_BOT_TOKEN: ${{ secrets.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 }}
         SKIP_FOLDERS: "tests,.github"
