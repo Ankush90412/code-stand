@@ -1,0 +1,12 @@
+{
+    "name": "yourname/my-php-project",
+    "description": "A simple PHP project",
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    }
+}
