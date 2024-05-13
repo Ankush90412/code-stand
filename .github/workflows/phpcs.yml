@@ -1,27 +1,29 @@
-name: PHP Code Review
+name: Code Review
 
 on:
   push:
     branches:
-      - main
+      - main  # Adjust the branch name 
 
 jobs:
-  php-code-review:
+  code-review:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup PHP
+      - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 7.4
+          php-version: '7.4'  # Adjust the PHP version as needed
 
-      - name: Install phpcs
-        run: sudo apt-get update && sudo apt-get install -y php-pear && sudo pear install PHP_CodeSniffer
+      - name: Install PHP_CodeSniffer
+        run: |
+          git clone https://github.com/squizlabs/PHP_CodeSniffer.git
+          cd PHP_CodeSniffer
+          composer install
 
-      - name: Run phpcs
-        run: phpcs --standard=PSR12 .
-
-
+      - name: Run CodeSniffer
+        run: |
+          ./PHP_CodeSniffer/bin/phpcs --standard=PSR12 .
