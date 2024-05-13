@@ -19,7 +19,7 @@ jobs:
           php-version: 7.4
 
       - name: Install phpcs
-        run: sudo -H pecl install phpcs
+        run: sudo -E pecl install phpcs
 
       - name: Configure phpcs
         run: phpcs --config-set installed_paths ${{ steps.install_phpcs.outputs.installation_path }}
