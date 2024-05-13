@@ -5,7 +5,7 @@
     <title>Sum Result</title>
 </head>
 <body>
-    <h2>Sum Result</h2
+    <h2>Sum Result</h2>
     
     <?php
     // Check if the form is submitted with a POST request
